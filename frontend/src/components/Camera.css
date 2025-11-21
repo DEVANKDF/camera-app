@@ -1,178 +1,75 @@
-.camera-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+/* Add these to your existing Camera.css */
+
+.server-status {
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: center;
 }
 
-.camera-controls {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
-    flex-wrap: wrap;
+.server-status.online {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
-.btn {
-    padding: 10px 20px;
+.server-status.offline {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.close-error {
+    background: none;
     border: none;
-    border-radius: 8px;
+    font-size: 18px;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    float: right;
+    color: inherit;
 }
 
-.btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.btn-primary {
-    background-color: #007bff;
+.btn-load {
+    background-color: #6f42c1;
     color: white;
 }
 
-.btn-primary:hover:not(:disabled) {
-    background-color: #0056b3;
+.btn-load:hover:not(:disabled) {
+    background-color: #5a2d9c;
 }
 
-.btn-capture {
-    background-color: #28a745;
-    color: white;
-}
-
-.btn-capture:hover:not(:disabled) {
-    background-color: #1e7e34;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    color: white;
-}
-
-.btn-secondary:hover:not(:disabled) {
-    background-color: #545b62;
-}
-
-.btn-clear {
+.btn-delete {
     background-color: #dc3545;
     color: white;
     font-size: 12px;
     padding: 5px 10px;
 }
 
-.btn-download {
-    background-color: #17a2b8;
-    color: white;
+.photo-status {
+    height: 20px;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.uploading-text {
+    color: #856404;
     font-size: 12px;
-    padding: 5px 10px;
+    font-weight: bold;
 }
 
-.camera-preview {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #000;
-    min-height: 400px;
+.failed-text {
+    color: #721c24;
+    font-size: 12px;
+    font-weight: bold;
 }
 
-.video-element {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.video-element.active {
-    display: block;
-}
-
-.camera-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-size: 18px;
-}
-
-.photo-section {
-    margin-top: 30px;
-}
-
-.photo-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.photo-header h3 {
-    margin: 0;
-    color: #333;
-}
-
-.photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.photo-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.photo-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 4px;
+.photo-item img.uploading {
+    opacity: 0.7;
 }
 
 .photo-actions {
     margin: 8px 0;
     display: flex;
-    justify-content: center;
-}
-
-.photo-time {
-    font-size: 11px;
-    color: #666;
-    display: block;
-    text-align: center;
-}
-
-.error-message {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px 0;
-    border: 1px solid #f5c6cb;
-}
-
-@media (max-width: 768px) {
-    .camera-controls {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 200px;
-    }
-
-    .photos-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
+    justify-content: space-between;
+    gap: 5px;
 }
